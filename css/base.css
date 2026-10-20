@@ -1,6 +1,6 @@
 :root {
     --back-color: #f6f6f6;
-    --body-color: #ffffff;
+    --body-color: #ecf8f8;
 }
 
 * {
@@ -19,7 +19,6 @@ body {
     align-items: center;
     flex-direction: column;
     margin: 0;
-    padding: 0 5%;
     min-height: 100vh;
 }
 

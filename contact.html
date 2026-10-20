@@ -14,39 +14,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="./script.js" defer></script>
     <title>Contact | Nathalie</title>
 </head>
 
 <body>
     <!--  Sidhuvud med Logotyp och huvudnavigation -->
-    <header class="header header-contact">
-        <nav class="navbar-main">
-            <div class="navbar-top">
-                <img src="./assets/assets-home/logo-1.png" alt="logo 007" class="logo-007" />
-                <button class="hamburger-menu" aria-label="Open menu"><img src="./assets-home/hamburger-menu.svg"
-                        alt=""></button>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-btn">
+                <!-- <img src="./assets/assets-home/logo-1.png" alt="logo 007" class="logo-007" /> -->
+        
+                <button class="nav-hamburger-menu" type="button" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="mobile-navigation">
+                    <img src="./assets/assets-home/hamburger-menu.svg" alt="">
+                </button>
             </div>
-            <ul class="nav-text">
-                <li class="nav-links"><a href="./index.html">Home</a></li>
-                <li class="nav-links"><a href="./about.html">About</a></li>
-                <li class="nav-links"><a href="./technologies.html">Technologies</a></li>
-                <li class="nav-links"><a href="./projects.html">Projects</a></li>
-                <li class="nav-links"><a href="./contact.html">Contact</a></li>
-            </ul>
-            <ul class="nav-social-logos">
-                <li class="nav-logo">
-                    <a href="https://x.com/" target="_blank"><img src="./assets/assets-home/twitter.svg"
-                            alt="Twitter Logotyp" /></a>
-                </li>
-                <li class="nav-logo">
-                    <a href="https://www.linkedin.com/in/nathalie-bj%C3%B6rkman-1a848814b" target="_blank"><img
-                            src="./assets/assets-home/linkedin.svg" alt="LinkedIn Logotyp" /></a>
-                </li>
-                <li class="nav-logo">
-                    <a href="https://github.com/nathalie-bjorkman" target="_blank"><img src="./assets/assets-home/github.svg"
-                            alt="Github Logotyp" /></a>
-                </li>
-            </ul>
+        
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li class="nav-links"><a href="./index.html">Home</a></li>
+                    <li class="nav-links"><a href="./about.html">About</a></li>
+                    <li class="nav-links"><a href="./projects.html">Projects</a></li>
+                    <li class="nav-links"><a href="./contact.html">Contact</a></li>
+                </ul>
+                <ul class="nav-social-logos">
+                    <li class="nav-logo">
+                        <a href="https://www.linkedin.com/in/nathalie-bj%C3%B6rkman-1a848814b" target="_blank"><img
+                                src="./assets/assets-home/linkedin.svg" alt="LinkedIn Logotyp" /></a>
+                    </li>
+                    <li class="nav-logo">
+                        <a href="https://github.com/nathalie-bjorkman" target="_blank"><img
+                                src="./assets/assets-home/github.svg" alt="Github Logotyp" /></a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -64,7 +66,8 @@
     </main>
     <!-- Sidfot med copyright och sociala länkar -->
     <footer>
-        <p class="footer-text"><span class="gray-text">Designed and coded by</span> Nathalie <span class="gray-text">with</span>
+        <p class="footer-text"><span class="gray-text">Designed and coded by</span> Nathalie <span
+                class="gray-text">with</span>
             Love <span class="gray-text">&</span> Nocco
         </p>
     </footer>

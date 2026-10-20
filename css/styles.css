@@ -1,7 +1,7 @@
 
 /* index.html */
 
-.nav-text,
+.nav-menu,
 .nav-social-logos {
     display: none;
 }
@@ -10,14 +10,13 @@
     width: 100%;
 }
 
-.navbar-main {
-    width: 100%;
+.navbar {
     font-family: "DM Sans", sans-serif;
     font-weight: 600;
     font-size: 1rem;
 }
 
-.navbar-top {
+.nav-btn {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,25 +24,60 @@
     margin-top: 3rem;
 }
 
-.logo-007 {
-    width: 77px;
-    height: auto;
-}
 
-.hamburger-menu {
-    width: 30px;
-    border: none;
+.nav-hamburger-menu {
+    margin-left: auto;
+    margin-right: 2rem;
+    width: 2.5rem;
+    border-radius: 15px;
     background: none;
     padding: 0;
     cursor: pointer;
+    position: relative;
+    z-index: 20;
 }
 
-.hamburger-menu img {
+.nav-hamburger-menu:hover {
+    background-color: #eddcd2;
+    transition: background-color 0.2s ease;
+}
+
+.nav-hamburger-menu img {
     width: 100%;
     display: block;
 }
 
-.nav-text {
+.nav-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 250px;
+    height: 100vh;
+    height: 100dvh;
+    padding: 5rem 1.5rem 2rem;
+
+    background-color: #e6beae;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1); 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.3s ease,
+        visibility 0.3s;
+    
+    z-index: 10;    
+}
+
+.nav-container.active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.nav-menu {
     font-size: 1rem;
     color: #000000;
     font-weight: 700;
@@ -53,31 +87,57 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.12rem;
+    margin: 2rem;
+    
+}
+
+.nav-menu a:hover {
+    background-color: #ecf8f8;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #000000;
     font-weight: 700;
+
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background-color: transparent;
+
+    transition: background-color 0.2s ease;
 }
 
-.home-page .nav-text {
+.nav-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
 }
 
-.home-page .nav-social-logos {
+.nav-social-logos {
     display: flex;
     justify-content: space-around;
     width: 100%;
     margin-top: 1.5rem;
-    margin-bottom: 5.5rem;
+    margin-bottom: 2rem;
+}
+
+.nav-logo {
+    padding: 0.5rem 1rem 0.1rem;
+    border-radius: 50px;
+}
+
+.nav-logo:hover {
+    background-color: #ecf8f8;
+    transition: background-color 0.2s ease;
 }
 
 ul {
     list-style-type: none;
+}
+
+main {
+    padding: 0 5%;
 }
 
 .introduction {
@@ -98,6 +158,7 @@ ul {
     align-items: flex-start;
     width: 100%;
     gap: 25px;
+    margin-top: 25%;
 }
 
 .picture {
@@ -109,23 +170,127 @@ ul {
     border: 6px solid transparent;
     border-radius: 50%;
     background: linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(to bottom, #E70FAA, #00C0FD) border-box;
+    linear-gradient(to bottom, #E70FAA, #00C0FD) border-box;
     margin-bottom: 4em;
 }
 
 
+/* About */
 
-
-
-
-
-/* Contact */
-
-/* Contact */
-
-.header-contact {
-    height: 12rem;
+#about {
+    margin-top: 1rem;
 }
+
+.navbar,
+.main {
+    width: 100%;
+    max-width: 1200px;
+}
+
+#about,
+#experience,
+#education {
+    width: 100%;
+    max-width: 700px;
+}
+
+.title {
+    font-weight: 680;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-me-text {
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: #666666;
+}
+
+
+/* Work experience + education */
+
+.work {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.5rem;
+    row-gap: 0.25rem;
+
+    width: 100%;
+}
+
+.under-title {
+    grid-column: 1;
+    grid-row: 1;
+
+    font-weight: 400;
+    font-size: 1rem;
+    color: #666666;
+    margin: 0;
+}
+
+.employment-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    height: 1.625rem;
+    background-color: #95eca9;
+    border-radius: 100px;
+
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #2b6b2f;
+
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    white-space: nowrap;
+
+    margin: 0;
+}
+
+.description {
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: #666666;
+    margin: 0;
+}
+
+.date {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.company {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.mobile-date-icon {
+    display: none;
+}
+
+.location {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.work hr {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    margin: 1rem 0;
+    border: 0;
+    border-top: 2px solid #EBEAED;
+}
+
+
+/* Contact */
 
 .contact {
     display: flex;
@@ -136,6 +301,8 @@ ul {
     font-weight: 700;
     font-size: 0.52rem;
     letter-spacing: -1px;
+
+    margin-top: 25%;
 }
 
 .contact-text {
@@ -203,22 +370,41 @@ ul {
 
     /* index html */
 
-    .navbar-main {
+    .header {
+        background-color: #e6beae;
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
         display: flex;
         flex-direction: row;
         align-items: center;
 
         width: 100%;
         max-width: 1200px;
-        margin: 3rem auto 0;
+        margin: 1rem auto 0;
+        
     }
 
-    .navbar-top {
+    .nav-container,
+    .nav-container.active {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: auto;
+
+        position: static;
         width: auto;
-        margin-top: 0;
+        height: auto;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        transform: none;
+        visibility: visible;
+        transition: none;
     }
 
-    .nav-text {
+    .nav-menu {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -233,9 +419,6 @@ ul {
         color: #666666;
     }
 
-    .home-page .nav-text {
-        flex-direction: row;
-    }
 
     .nav-social-logos {
         display: flex;
@@ -244,16 +427,10 @@ ul {
         gap: 1rem;
 
         width: auto;
-        margin: 0 0 0 2rem;
+        margin: 0 3rem 0 2rem;
     }
 
-    .home-page .nav-social-logos {
-        width: auto;
-        margin: 0 0 0 2rem;
-        justify-content: flex-start;
-    }
-
-    .hamburger-menu {
+    .nav-hamburger-menu {
         display: none;
     }
 
@@ -283,6 +460,62 @@ ul {
     }
 
 
+    /* About */
+
+    .main {
+        width: 100%;
+        max-width: 1200px;
+        margin: 6rem auto 0;
+    }
+
+    #about {
+        margin-top: 1rem;
+    }
+
+    #about,
+    #experience,
+    #education {
+        max-width: 1200px;
+    }
+
+    .description {
+        font-size: 0.875rem;
+    }
+
+    .header-about {
+        height: auto;
+    }
+
+    .title {
+        font-size: 2.625rem;
+        color: #42446E;
+        font-weight: 700;
+    }
+
+   .location {
+       grid-row: 2;
+       margin: 0 auto 0;
+   }
+
+   .desktop-date-icon {
+        display: inline;
+   }
+
+
+    .about-me-text {
+        font-size: 1.125rem;
+        font-weight: 400;
+    }
+
+    .under-title {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    .employment-type {
+        width: 70%;
+    }
+
 
 
 
@@ -295,7 +528,6 @@ ul {
         width: 100%;
         max-width: 1200px;
         margin: 4rem auto 0;
-
     }
 
     .contact-text {
