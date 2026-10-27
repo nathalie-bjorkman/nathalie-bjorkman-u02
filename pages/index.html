@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     <title>My Portfolio | Fullstackutvecklare</title>
 </head>
 
@@ -22,16 +22,16 @@
     <!--  Sidhuvud med Logotyp och huvudnavigation -->
     <header class="header">
         <nav class="navbar">
+
             <div class="nav-btn">
                 <!-- <img src="./assets/assets-home/logo-1.png" alt="logo 007" class="logo-007" /> -->
-
                 <button class="nav-hamburger-menu" type="button" aria-label="Open menu" aria-expanded="false"
                     aria-controls="mobile-navigation">
-                    <img src="../assets/assets-home/hamburger-menu.svg" alt="">
+                    <img class="hamburger-icon" src="../assets/assets-home/hamburger-menu.svg" alt="">
+                    <img class="close-icon" src="../assets/assets-home/close-menu.svg" alt="">
                 </button>
             </div>
-
-            <div class="nav-container">
+            <div class="nav-container" id="mobile-navigation">
                 <ul class="nav-menu">
                     <li class="nav-links"><a href="./index.html">Home</a></li>
                     <li class="nav-links"><a href="./about.html">About</a></li>
@@ -49,6 +49,10 @@
                     </li>
                 </ul>
             </div>
+            <button id="theme-toggle" type="button" aria-label="Activate dark mode">
+                <img class="moon-icon" src="../assets/assets-home/moon-button.svg" alt="">
+                <img class="sun-icon" src="../assets/assets-home/sun-button.svg" alt="">
+            </button>
         </nav>
     </header>
     <main>

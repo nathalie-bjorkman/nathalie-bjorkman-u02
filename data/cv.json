@@ -1,0 +1,73 @@
+
+
+{
+    "basics": {
+        "name": "Nathalie Björkman",
+        "label": "student",
+        "email": "nathalie.bjorkman96@outlook.com",
+        "location": {"city": "Stockholm"}
+    },
+
+    "workExperience": [
+      {
+        "title": "Warehouse Order Picker",
+        "company": "Jordklok",
+        "location": "Österhaninge",
+        "start": "2022-02",
+        "end": "2022-10",
+        "description": "Accurately selecting items from warehouse shelves using pick lists or RF scanners and securely packing them for shipment."
+      },
+      {
+        "title": "Restaurant Worker",
+        "company": "MAX Burgers",
+        "location": "Solna",
+        "start": "2023-01",
+        "end": "2023-10",
+        "description": "Delivered high-quality customer service in a fast-paced environment, ensuring a welcoming atmosphere for all guests."
+      },
+      {
+        "title": "Restaurant Worker",
+        "company": "Samack/Chateauliban",
+        "location": "Sundbyberg",
+        "start": "2025-01",
+        "end": "2025-06",
+        "description": "A fully licensed restaurant, I was responsible for managing table service, mixing standard cocktails, and ensuring a safe, upscale dining experience."
+      }
+    ],
+
+    "education": [
+        {
+            "title": "Elementary school",
+            "school": "Söderfjärdsskolan/Norrbergsskolan",
+            "location": "Vaxholm",
+            "start": "2003",
+            "end": "2012"
+        },
+
+        {
+            "title": "Upper Secondary Education",
+            "school": "Grillska Gymnasiet (f.d. John Bauer gymnasiet)",
+            "location": "Sundbyberg",
+            "start": "2012",
+            "end": "2015"
+        },
+        {
+            "title": "Fullstack Developer, JavaScript",
+            "school": "Chas Academy",
+            "location": "Johanneshov",
+            "start": "2026",
+            "end": ""
+        }
+    ],
+
+    "languages": [
+        {"language": "Swedish", "level": "Mother tongue"},
+        {"language": "English", "level": "Fluently "}
+    ],
+
+    "hoobys": [
+        "Crochet",
+        "Knitting",
+        "Painting"
+    ]
+}
