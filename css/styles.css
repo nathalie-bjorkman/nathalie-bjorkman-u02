@@ -36,11 +36,11 @@
     cursor: pointer;
     position: relative;
     z-index: 20;
+    transition: background-color 0.2s ease;
 }
 
 .nav-hamburger-menu:hover {
     background-color: var(--hover-menu-color);
-    transition: background-color 0.2s ease;
 }
 
 .nav-hamburger-menu img {
@@ -74,6 +74,9 @@
     filter: invert(1);
 }
 
+
+/* Navbar */
+
 .nav-container {
     position: fixed;
     top: 0;
@@ -104,6 +107,54 @@
     visibility: visible;
 }
 
+/* Dark and light mode button */
+
+.theme-btn {}
+
+#theme-toggle {
+    margin-left: 9rem;
+    margin-top: 1rem;
+
+    position: relative;
+    z-index: 20;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: background-color 0.2s ease;
+    border-radius: 50px;
+}
+
+#theme-toggle:hover {
+    background-color: var(--hover-menu-color);
+}
+
+#theme-toggle img {
+    width: 100%;
+}
+
+/* Light mode */
+#theme-toggle .moon-icon {
+    display: block;
+    width: 2.5rem;
+}
+
+#theme-toggle .sun-icon {
+    display: none;
+}
+
+/* Dark mode */
+.dark-mode #theme-toggle .moon-icon {
+    display: none;
+}
+
+.dark-mode #theme-toggle .sun-icon {
+    display: block;
+    filter: invert(1);
+    width: 2.5rem;
+}
+
 .nav-menu {
     font-size: 1rem;
     color: #000000;
@@ -119,7 +170,7 @@
 }
 
 .nav-menu a:hover {
-    background-color: #ecf8f8;
+    background-color: var(--hover-menu-color);
 }
 
 .nav-links a {
@@ -152,48 +203,20 @@
 .nav-logo {
     padding: 0.5rem 1rem 0.1rem;
     border-radius: 50px;
+    transition: background-color 0.2s ease;
 }
 
 .nav-logo:hover {
-    background-color: #ecf8f8;
-    transition: background-color 0.2s ease;
+    background-color: var(--hover-social-logos-color);
 }
 
 ul {
     list-style-type: none;
 }
 
-#theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    
-    width: 3rem;
-}
 
-#theme-toggle img {
-    width: 100%;
-}
 
-/* Light mode */
-#theme-toggle .moon-icon {
-    display: block;
-}
-
-#theme-toggle .sun-icon {
-    display: none;
-}
-
-/* Dark mode */
-.dark-mode #theme-toggle .moon-icon {
-    display: none;
-}
-
-.dark-mode #theme-toggle .sun-icon {
-    display: block;
-    filter: invert(1);
-}
+/* Introduction */
 
 main {
     padding: 0 5%;
@@ -425,7 +448,7 @@ main {
     DESKTOP
 =======================================================*/
 
-@media (min-width: 1010px) {
+@media (min-width: 1052px) {
 
     /* index html */
 
@@ -442,7 +465,6 @@ main {
         width: 100%;
         max-width: 1200px;
         margin: 1rem auto 0;
-        
     }
 
     .nav-container,
@@ -592,7 +614,7 @@ main {
     .contact-text {
         font-size: 3.625rem;
         font-weight: 700;
-        color: #1E0E62;
+        color: var(--text-color);
     }
 
     .mobile-text {

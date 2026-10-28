@@ -19,21 +19,23 @@
 </head>
 
 <body>
-
-    <!--  Sidhuvud med Logotyp och huvudnavigation -->
-    <!-- skapa header-projcts, header-contact mm på alla sidor förutom index.html -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-btn">
                 <!-- <img src="./assets/assets-home/logo-1.png" alt="logo 007" class="logo-007" /> -->
-    
                 <button class="nav-hamburger-menu" type="button" aria-label="Open menu" aria-expanded="false"
                     aria-controls="mobile-navigation">
-                    <img src="../assets/assets-home/hamburger-menu.svg" alt="">
+                    <img class="hamburger-icon" src="../assets/assets-home/hamburger-menu.svg" alt="">
+                    <img class="close-icon" src="../assets/assets-home/close-menu.svg" alt="">
                 </button>
             </div>
-    
-            <div class="nav-container">
+            <div class="nav-container" id="mobile-navigation">
+                <div class="theme-btn">
+                    <button id="theme-toggle" type="button" aria-label="Activate dark mode">
+                        <img class="moon-icon" src="../assets/assets-home/moon-button.svg" alt="">
+                        <img class="sun-icon" src="../assets/assets-home/sun-button.svg" alt="">
+                    </button>
+                </div>
                 <ul class="nav-menu">
                     <li class="nav-links"><a href="./index.html">Home</a></li>
                     <li class="nav-links"><a href="./about.html">About</a></li>
@@ -96,8 +98,7 @@
                     <img src="./assets/assets-about/location.svg" alt="" />
                 </p>
                 <p class="description date">
-                    <img class="mobile-date-icon desktop-date-icon" src="./assets/assets-about/calendar.png"
-                        alt="" />
+                    <img class="mobile-date-icon desktop-date-icon" src="./assets/assets-about/calendar.png" alt="" />
                 </p>
                 <hr>
             </div>

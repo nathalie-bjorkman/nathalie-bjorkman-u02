@@ -4,7 +4,9 @@
     --back-color: #f6f6f6;
     --body-color: #ecf8f8;
     --header-color: #e6beae;
-    --hover-menu-color:#eddcd2;
+    --hover-links-color: #ecf8f8;
+    --hover-social-logos-color: #ecf8f8;
+    --hover-menu-color: #eddcd2;
     --text-color: #42446E;
     --secondary-text-color: #666666;
     --nav-text-color: #000000;
@@ -16,6 +18,7 @@
     --back-color: #121212;
     --body-color: #1e1e1e;
     --header-color: #302735;
+    --hover-social-logos-color: #fefae0;
     --hover-menu-color: #e07a5f;
     --menu-color: #edddd4;
     --text-color: #f5f5f5;
