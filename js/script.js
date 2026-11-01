@@ -1,3 +1,4 @@
+// Hamburgemenyn
 
 const hamburgerMenu = document.querySelector(".nav-hamburger-menu");
 const navContainer = document.querySelector(".nav-container");
@@ -24,6 +25,7 @@ function toggleMenu() {
 
 hamburgerMenu.addEventListener("click", toggleMenu);
 
+// Mörkt & ljust läge
 // Hämtar in DOM:en
 
 const themeToggle = document.getElementById("theme-toggle");
@@ -62,38 +64,89 @@ if (themeToggle) {
   themeToggle.addEventListener("click", toggleTheme);
 }
 
-const workContainers = document.querySelectorAll("#experience .work");
+// Fetch cv.json
+async function loadCV() {
+  try {
+  const response = await fetch("../data/cv.json");
+  const data = await response.json();
+  console.log(data);
+  } catch(error) {
+    console.log("Kunde inte hämta JSON-filen", error);
+  }
 
-const educationContainers = document.querySelectorAll("#education .work");
+  const response = await fetch("../data/cv.json");
+  if (!response.ok) {
+    throw new Error("Kunde inte JSON-filen");
+  }
+  const data = await response.json();
+  
+  const workContainer = document.getElementById("experience");
+  const educationContainer = document.getElementById("education");
 
-fetch("../data/cv.json")
-  .then(function (response) {
-    if (!response.ok) {
-      throw new Error("Kunde inte hämta CV-filen");
-    }
+  // En forEach loop för arbetslivserfarenhet
+    data.workExperience.forEach((experience) => {
+    const cardWork = document.createElement("div");
+    const headingWork = document.createElement("h3");
+    const pCompanyWork = document.createElement("p");
+    const pLocationWork = document.createElement("p");
+    const pDateWork = document.createElement("p");
+    const hrWork = document.createElement("hr");
 
-    return response.json();
-  })
+    headingWork.textContent = experience.title;
+    pCompanyWork.textContent = experience.company;
+    pLocationWork.textContent = experience.location;
+    pDateWork.textContent = experience.date;
 
-  .then(function (data) {
-    console.log(data);
-  })
+    cardWork.appendChild(headingWork);
+    cardWork.appendChild(pCompanyWork);
+    cardWork.appendChild(pLocationWork);
+    cardWork.appendChild(pDateWork);
+    cardWork.appendChild(hrWork);
 
-  .catch(function (error) {
-    console.log("Något gick fel:", error);
-  })
+    workContainer.appendChild(cardWork);
 
-  .then(function (data) {
-    //Arbetslivserfarenhet
-    data.workExperience.forEach(function (work, index) {
-      const container = workContainers[index];
+    // Få in CSS:en med classList.add
 
-      container.querySelector(".under-title").textContent = work.title;
-
-      container.querySelector(".company").append(work.company);
-
-      container.querySelector(".location").append(work.location);
-
-      container.querySelector(".date").append(work.start + " - " + work.end);
-    });
+    cardWork.classList.add("work");
+    headingWork.classList.add("under-title");
+    pDateWork.classList.add("date");
+    pCompanyWork.classList.add("company");
+    pLocationWork.classList.add("location");
+    cardWork.classList.add("description");
   });
+
+  // ForEach loop för utbildning
+
+  data.education.forEach((education) => {
+    const cardEducation = document.createElement("div");
+    const headingEducation = document.createElement("h3");
+    const pCompanyEducation = document.createElement("p");
+    const pLocationEducation = document.createElement("p");
+    const pDateEducation = document.createElement("p");
+    const hrEducation = document.createElement("hr");
+
+    headingEducation.textContent = education.title;
+    pCompanyEducation.textContent = education.company;
+    pLocationEducation.textContent = education.location;
+    pDateEducation.textContent = education.date;
+
+    cardEducation.appendChild(headingEducation);
+    cardEducation.appendChild(pCompanyEducation);
+    cardEducation.appendChild(pLocationEducation);
+    cardEducation.appendChild(pDateEducation);
+    cardEducation.appendChild(hrEducation);
+
+    educationContainer.appendChild(cardEducation);
+
+    // Få in CSS:en med classList.add
+
+    cardEducation.classList.add("work");
+    headingEducation.classList.add("under-title");
+    pDateEducation.classList.add("date");
+    pCompanyEducation.classList.add("company");
+    pLocationEducation.classList.add("location");
+    cardEducation.classList.add("description");
+  });
+}
+
+loadCV();
