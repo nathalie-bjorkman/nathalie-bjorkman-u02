@@ -76,7 +76,7 @@ async function loadCV() {
 
   const response = await fetch("../data/cv.json");
   if (!response.ok) {
-    throw new Error("Kunde inte JSON-filen");
+    throw new Error("Kunde inte hämta JSON-filen");
   }
   const data = await response.json();
   
