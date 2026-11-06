@@ -15,11 +15,9 @@ function toggleMenu() {
   if (isOpen) {
     hamburgerMenu.setAttribute("aria-label", "Close menu");
 
-    menuIcon.src = "../assets/assets-home/close-menu.svg";
   } else {
     hamburgerMenu.setAttribute("aria-label", "Open menu");
 
-    menuIcon.src = "../assets/assets-home/hamburger-menu.svg";
   }
 }
 

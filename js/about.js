@@ -4,10 +4,16 @@
 async function fetchData(path) {
   try {
     const dataRequest = await fetch(path);
+    if (!dataRequest.ok) {
+      throw new Error(`Could not fetch from: ${path}`);
+    }
+
     const data = await dataRequest.json();
     return data;
+
   } catch (error) {
-    throw new Error(`Could not fetch from:`, path);
+    console.log("Something went wrong:", error);
+    throw error;
   }
 }
 
@@ -74,7 +80,7 @@ async function loadCV() {
     const hrEducation = document.createElement("hr");
 
     headingEducation.textContent = education.title;
-    pCompanyEducation.textContent = education.company;
+    pCompanyEducation.textContent = education.school;
     pLocationEducation.textContent = education.location;
     pDateEducation.textContent = education.date;
 

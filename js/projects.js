@@ -25,11 +25,18 @@ async function getGithubProjects() {
 async function fetchGithub(GithubPath) {
   try {
     const apiRequest = await fetch(GithubPath);
+
+    if (!apiRequest.ok) {
+      throw new Error("Could not fetch Github projects");
+    }
+
     const projects = await apiRequest.json();
-    console.log(apiRequest);
+
     return projects;
+
   } catch (error) {
-    throw new Error("Could not fetch from:", GithubPath);
+    console.log("Something went wrong:", error);
+    throw error;
   }
 }
 
@@ -57,10 +64,7 @@ async function loadGithub() {
 
   const projectContainer = document.querySelector(".projects-container");
 
-  console.log(projects[0].name);
-  console.log(projects[1].name);
-
-  projects.forEach((project) => {
+  myProjects.forEach((project) => {
     const cardProjects = document.createElement("article");
 
     const projectContent = document.createElement("div");

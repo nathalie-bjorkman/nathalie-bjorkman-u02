@@ -244,7 +244,6 @@ main {
 
 .picture {
     max-width: 100%;
-    height: auto;
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -356,7 +355,7 @@ main {
 .project-under-title {
     font-weight: 400;
     font-size: 1rem;
-    color: #666666;
+    color: var(--project-p);
     font-style: normal;
     margin-bottom: 1.5rem;
 }
@@ -371,7 +370,7 @@ main {
     width: 100%;
     max-width: 100%;
     border-radius: 10px;
-    background-color: #FFFFFF;
+    background-color: var(--projects-background-colour);
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
 }
