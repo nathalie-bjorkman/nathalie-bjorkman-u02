@@ -11,10 +11,12 @@
     --secondary-text-color: #666666;
     --nav-text-color: #000000;
     --footer-gray-color: #5b5656;
+    /*  Projekt variabler */
     --projects-background-colour: #FFFFFF;
     --project-p: #666666;
-    
-
+    --project-title-color: #000000;
+    --project-description-color: #666666;
+    --project-link-color: #000000;
 }
 
 :root.dark-mode {
@@ -29,8 +31,12 @@
     --secondary-text-color: #cccccc;
     --nav-text-color: #ffffff;
     --footer-gray-color: #cccccc;
-    --projects-background-colour: #9a8c98;
+    /*  Projekt variabler */
+    --projects-background-colour: #514653;
     --project-p: #f5f5f5;
+    --project-title-color: #ffffff;;
+    --project-description-color: #f5f5f5;
+    --project-link-color: #ffffff;
 }
 
 * {

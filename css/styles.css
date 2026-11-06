@@ -154,17 +154,12 @@
     width: 2.5rem;
 }
 
-.nav-menu {
-    font-size: 1rem;
-    color: #000000;
-    font-weight: 700;
-}
-
 .nav-links {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 2rem;
+    
     
 }
 
@@ -352,6 +347,24 @@ main {
     height: 8rem;
 }
 
+.github-status {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--secondary-text-color);
+}
+
+.github-status:empty {
+    display: none;
+}
+
+.github-status.error {
+    color: #d93025;
+}
+
+.github-status.success {
+    color: #238636;
+}
+
 .project-under-title {
     font-weight: 400;
     font-size: 1rem;
@@ -406,13 +419,13 @@ main {
     font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 0.9rem;
-    color: #000000;
+    color: var(--project-title-color);
 }
 
 .under-project-title {
     font-weight: 300;
     font-size: 1rem;
-    color: #666666;
+    color: var(--project-description-color);
     margin-bottom: 0.9rem;
 }
 
@@ -433,8 +446,9 @@ main {
 }
 
 .view-code-text {
-    margin-bottom: 1rem;
-    margin-right: 1rem;
+    color: var(--project-link-color);
+    font-size: 0.875rem;
+    font-weight: 400;
 }
 
 .view-code {
@@ -557,7 +571,6 @@ main {
     .nav-links a {
         font-size: 1.25rem;
         font-weight: 500;
-        color: var(--secondary-text-color);
     }
 
 

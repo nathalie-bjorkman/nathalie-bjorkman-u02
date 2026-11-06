@@ -33,7 +33,6 @@ async function fetchGithub(GithubPath) {
     const projects = await apiRequest.json();
 
     return projects;
-
   } catch (error) {
     console.log("Something went wrong:", error);
     throw error;
@@ -46,13 +45,22 @@ const githubUrl =
 async function loadGithub() {
   const projects = await fetchGithub(githubUrl);
 
+  // Repositories som inte ska visas, 
+  // kan lägga till fler direkt här, utan att behöva ändra i myProjects funtionen här nere
+  const excludedProjects = ["u03---Projektarbet--quiz-app-grupp-7"];
+
   // Filtrering av projekt från GitHub
   // Filter går igenom alla repositories
   // !project.fork gör att det inte visas repositories som är forks
   // !project.archived gör att det inte visas arkiverade projekt
 
   const myProjects = projects.filter((project) => {
-    return !project.fork && !project.archived;
+    return (
+      // !== betyder inte lika med
+      !project.fork &&
+      !project.archived &&
+      !excludedProjects.includes(project.name)
+    );
   });
 
   // Sortering efter när de senast uppdaterades
@@ -64,6 +72,7 @@ async function loadGithub() {
 
   const projectContainer = document.querySelector(".projects-container");
 
+  // Skapa projektkorten
   myProjects.forEach((project) => {
     const cardProjects = document.createElement("article");
 
