@@ -109,7 +109,6 @@
 
 /* Dark and light mode button */
 
-.theme-btn {}
 
 #theme-toggle {
     margin-left: 9rem;
@@ -370,7 +369,7 @@ main {
 
 .project {
     width: 100%;
-    max-width: 1009px;
+    max-width: 100%;
     border-radius: 10px;
     background-color: #FFFFFF;
     overflow: hidden;
@@ -394,7 +393,6 @@ main {
     align-items: center;
 }
 
-.live-preview-text,
 .view-code-text {
     display: flex;
     align-items: center;
@@ -440,7 +438,6 @@ main {
     margin-right: 1rem;
 }
 
-.live-preview,
 .view-code {
     margin-right: 0.1rem;
     margin-bottom: 0.3rem;
@@ -505,19 +502,6 @@ main {
     color: transparent;
     background-clip: text;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -684,7 +668,7 @@ main {
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 3rem;
     column-gap: 2rem;
 }
@@ -707,7 +691,6 @@ main {
     font-size: 0.875rem;
 }
 
-.live-preview-text,
 .view-code-text {
     font-size: 1rem;
     text-decoration: underline;
