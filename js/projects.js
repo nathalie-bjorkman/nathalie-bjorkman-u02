@@ -23,39 +23,46 @@ async function getGithubProjects() {
 /* console.log("projects.js is running"); */
 
 async function fetchGithub(GithubPath) {
-  try {
-    const apiRequest = await fetch(GithubPath);
+  const response = await fetch(GithubPath, {
+    signal: AbortSignal.timeout(10000)
+  });
 
-    if (!apiRequest.ok) {
-      throw new Error("Could not fetch Github projects");
-    }
-
-    const projects = await apiRequest.json();
-
-    return projects;
-  } catch (error) {
-    console.log("Something went wrong:", error);
-    throw error;
+  if (!response.ok) {
+    throw new Error (
+      `GitHub API error: ${response.status}`
+    );
   }
+
+  const projects = await response.json();
+
+  return projects;
 }
 
 const githubUrl =
   "https://api.github.com/users/nathalie-bjorkman/repos?per_page=100";
 
 async function loadGithub() {
-  const projects = await fetchGithub(githubUrl);
+  const statusMessage = document.querySelector("#github-status");
+  const projectContainer = document.querySelector(".projects-container");
 
-  // Repositories som inte ska visas, 
+  // Visa loading
+  statusMessage.textContent = "Loading projects from GitHub...";
+  statusMessage.className = "github-status loading";
+
+  try {
+    const projects = await fetchGithub(githubUrl);
+
+    // Repositories som inte ska visas, 
   // kan lägga till fler direkt här, utan att behöva ändra i myProjects funtionen här nere
   const excludedProjects = ["u03---Projektarbet--quiz-app-grupp-7"];
 
-  // Filtrering av projekt från GitHub
-  // Filter går igenom alla repositories
-  // !project.fork gör att det inte visas repositories som är forks
-  // !project.archived gör att det inte visas arkiverade projekt
-
   const myProjects = projects.filter((project) => {
     return (
+
+      // Filtrering av projekt från GitHub
+      // Filter går igenom alla repositories
+      // !project.fork gör att det inte visas repositories som är forks
+      // !project.archived gör att det inte visas arkiverade projekt
       // !== betyder inte lika med
       !project.fork &&
       !project.archived &&
@@ -70,7 +77,17 @@ async function loadGithub() {
     return new Date(b.pushed_at) - new Date(a.pushed_at);
   });
 
-  const projectContainer = document.querySelector(".projects-container");
+  // Kontrollera om listan är tom
+  if (myProjects.length === 0){
+    statusMessage.textContent = "No projects available right now.";
+
+     statusMessage.className = "github-status empty";
+     return;
+  }
+
+  // Loading är färdig 
+  statusMessage.textContent = "";
+  statusMessage.className = "github-status";
 
   // Skapa projektkorten
   myProjects.forEach((project) => {
@@ -112,6 +129,18 @@ async function loadGithub() {
 
     projectContainer.appendChild(cardProjects);
   });
-}
+
+   } catch (error) {
+        console.error("Could not load GitHub projects:", error);
+
+        statusMessage.textContent =
+            "Sorry! Could not load projects right now. Please try again later.";
+
+        statusMessage.className = "github-status error";
+    }
+
+  }
+
+  
 
 loadGithub();
